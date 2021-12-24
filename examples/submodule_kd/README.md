@@ -1,4 +1,4 @@
-This repo for paper: Knowledge Distillation with Transformers sub-modules
+This repo for paper: Multi-Teacher Distillation with Single Model for Neural Machine Translation
 
 # how to generate different submodules:
 
@@ -8,8 +8,6 @@ This repo for paper: Knowledge Distillation with Transformers sub-modules
 
 train teacher model
 > bash script/run_baseline.sh
-
-DE-EN dev-BLEU 35.47 test-BLEU=34.93
 
 change script train&test flag to generate teacher data
 
@@ -31,26 +29,6 @@ param:
 --sublayer-reorder \
 --sublayer-drop \
 --encoder-sub-layerdrop 0.2 --decoder-sub-layerdrop 0.2 
-
-4. drop head
-
-## Apply Mask
-
-1.  pruning weight by magnitude
-
-apply different drop/pruning rate for different layer
-
-1. Encoder and Decoder
-
-2. keep higher layer and keep lower layer, and so on.
-
-# how to select/reweight instance for Knowledge distillation:
-
-split data for following mertic, and observe the result.
-
-1. BLEU
-
-2. uncertainty variance
 
 ## distillation
 
